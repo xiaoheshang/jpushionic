@@ -1,0 +1,39 @@
+<ion-view view-title="极光推送Ionic Demo">
+  <ion-content class="padding">
+        <form name="jPushForm">
+          <button class="button button-block button-positive" ng-click="init()">启动推送服务</button>
+          <button class="button button-block button-energized" ng-click="stopPush()">停止推送服务</button>
+          <button class="button button-block button-royal" ng-click="resumePush()">重启推送服务</button>
+          <button class="button button-block button-light" ng-click="getPushState()">查看服务状态</button>
+          <div class="list">
+            <div class="item item-input-inset">
+              <label class="item-input-wrapper">
+                <input type="text" placeholder="设置tag,多个tag用逗号分隔" required ng-trim="true" ng-model="options.tags" />
+              </label>
+
+              <input type="submit" class="button button-small button-positive" value="设置" ng-click="setTags()" />
+              <!-- <button class="button button-small button-positive" ng-click="setTags()"> 
+                设置
+              </button>-->
+            </div>
+            
+
+            <div class="item item-input-inset">
+              <label class="item-input-wrapper">
+                <input type="text" placeholder="设置alias" required ng-trim="true" ng-model="options.alias" />
+              </label>
+              <input type="submit" class="button button-small button-positive" value="设置" ng-click="setAlias()" />
+              <!-- <button class="button button-small button-positive" ng-click="setAlias()">
+                设置
+              </button> -->
+            </div>
+          </div>
+          <button class="button button-block button-balanced" ng-click="setTagsWithAlias()">同时设置</button>
+          <button class="button button-block button-royal" ng-click="cleanTagAndAlias()">清空设置</button>
+          <a href="#/list">消息列表</a>
+          <span class="error" ng-show="jPushForm.input.$error.required">要求输入设置值</span>
+          
+          <p>{{result}}</p>
+        </form>
+      </ion-content>
+</ion-view>

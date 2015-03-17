@@ -1,0 +1,9 @@
+<ion-view title="消息列表">
+	<ion-content>
+		<ion-list>
+			<ion-item ng-repeat="item in items" href="#/detail?id={{item.id}}">
+			对应消息:{{item.id}}
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
